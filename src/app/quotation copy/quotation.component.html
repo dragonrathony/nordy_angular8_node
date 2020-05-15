@@ -1,0 +1,82 @@
+<div class="content-header">
+    <h1>
+        Quotation
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Sales</a></li>
+        <li class="active">Quotation</li>
+    </ol>
+</div>
+<div class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-12 col-xs-12">
+            <div class="box box-info">
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <form role="form" class="form-horizontal"
+                        (ngSubmit)="f.valid && f.dirty && submitQuotation(quotationParam)" #f="ngForm">
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="card-box">
+                                    <div class="form-group row">
+                                        <label class="col-sm-12 col-form-label">Product code</label>
+                                        <div class="col-sm-12">
+                                            <input class="form-control" name="productCode" type="text"
+                                                placeholder="Enter Divider" [(ngModel)]="quotationParam.productCode"
+                                                #productCode="ngModel">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="card-box">
+                                    <div class="form-group row">
+                                        <label class="col-sm-12 col-form-label">Quantity</label>
+                                        <div class="col-sm-12">
+                                            <input class="form-control" name="quantidade" type="number"
+                                                placeholder="Enter Divider" [(ngModel)]="quotationParam.quantidade"
+                                                #quantidade="ngModel">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="btn btn-primary mb-15">Submit</button>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card-box">
+                                    <table class="table custom-table">
+                                        <thead>
+                                            <tr role="row">
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Office</th>
+                                                <th>Age</th>
+                                                <th>Start date</th>
+                                                <th>Salary</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let q of listQuotation">
+                                                <td>Tatyana Fitzpatrick</td>
+                                                <td>Regional Director</td>
+                                                <td>London</td>
+                                                <td>19</td>
+                                                <td>2010/03/17</td>
+                                                <td>$385,750</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

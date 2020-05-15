@@ -1,0 +1,257 @@
+<div class="content-header">
+    <h1>
+        Product
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Product Eng</a></li>
+        <li class="active">Product</li>
+    </ol>
+</div>
+<div class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-12 col-xs-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Add Product</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {{loading}}
+                        </div>
+                        <div class="col-sm-12 addproduct_form" [innerHTML]="controlListString | safeHtml">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- <form role="form" class="form-horizontal"    name="form"
+        (ngSubmit)="f.valid && f.dirty && submitAddProduct(paramChar1)"
+        #f="ngForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-box">
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label"> Details</label>
+                            <div class="col-sm-12">
+                                <select class="form-control" name="ProductCharFatherId"  [(ngModel)]="paramChar1.ProductCharFatherId"
+                                #ProductCharFatherId="ngModel">
+                                    <option value="0">--Select--</option>
+                                    <option *ngFor="let l of listChar2" [value]="l.productCharFatherId">{{l.productChildDesc}}</option>
+                                   
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">FamilyMember</label>
+                            <div class="col-sm-12">
+                                <input 
+                                class="form-control"
+                                name="FamilyMember"
+                                type="number"
+                                placeholder="Enter FamilyMember"
+                                [(ngModel)]="paramChar1.FamilyMember"
+                                #FamilyMember="ngModel"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">Order</label>
+                            <div class="col-sm-12">
+                                <input 
+                                class="form-control"
+                                name="Order"
+                                type="number"
+                                placeholder="Enter Order"
+                                [(ngModel)]="paramChar1.Order"
+                                #Order="ngModel"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">Property Name</label>
+                            <div class="col-sm-12">
+                                <input 
+                                class="form-control"
+                                name="Property"
+                                type="text"
+                                placeholder="Enter Property"
+                                [(ngModel)]="paramChar1.Property"
+                                #Property="ngModel"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">Label Name</label>
+                            <div class="col-sm-12">
+                                <input 
+                                class="form-control"
+                                name="Label"
+                                type="text"
+                                placeholder="Enter Label"
+                                [(ngModel)]="paramChar1.Label"
+                                #Label="ngModel"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">Required</label>
+                            <div class="col-sm-12">
+                                <input 
+
+                                name="Required"
+                                type="checkbox"
+                                placeholder="Enter Required"
+                                [(ngModel)]="paramChar1.Required"
+                                #Required="ngModel"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">Type Name</label>
+                            <div class="col-sm-12">
+                                <input 
+                                class="form-control"
+                                name="Type"
+                                type="text"
+                                placeholder="Enter Type"
+                                [(ngModel)]="paramChar1.Type"
+                                #Type="ngModel"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">Mask Name</label>
+                            <div class="col-sm-12">
+                                <input 
+                                class="form-control"
+                                name="Mask"
+                                type="text"
+                                placeholder="Enter Mask"
+                                [(ngModel)]="paramChar1.Mask"
+                                #Mask="ngModel"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-box">
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">MinLength</label>
+                            <div class="col-sm-12">
+                                <input 
+                                class="form-control"
+                                name="MinLength"
+                                type="number"
+                                placeholder="Enter MinLength"
+                                [(ngModel)]="paramChar1.MinLength"
+                                #MinLength="ngModel"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">MaxLength </label>
+                            <div class="col-sm-12">
+                                <input 
+                                class="form-control"
+                                name="MaxLength"
+                                type="number"
+                                placeholder="Enter MaxLength"
+                                [(ngModel)]="paramChar1.MaxLength"
+                                #MaxLength="ngModel"
+                                >
+                            </div>
+                        </div>
+                   
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">Visible</label>
+                            <div class="col-sm-12">
+                                <input 
+                            
+                                name="Visible"
+                                type="checkbox"
+                                placeholder="Enter Visible"
+                                [(ngModel)]="paramChar1.Visible"
+                                #Visible="ngModel"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">Disabled</label>
+                            <div class="col-sm-12">
+                                <input 
+                            
+                                name="Disabled"
+                                type="checkbox"
+                                placeholder="Enter Disabled"
+                                [(ngModel)]="paramChar1.Disabled"
+                                #Disabled="ngModel"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">GridColumns</label>
+                            <div class="col-sm-12">
+                                <input 
+                                class="form-control"
+                                name="GridColumns"
+                                type="number"
+                                placeholder="Enter GridColumns"
+                                [(ngModel)]="paramChar1.GridColumns"
+                                #GridColumns="ngModel"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">GridSmColumns</label>
+                            <div class="col-sm-12">
+                                <input 
+                                class="form-control"
+                                name="GridSmColumns"
+                                type="number"
+                                placeholder="Enter GridSmColumns"
+                                [(ngModel)]="paramChar1.GridSmColumns"
+                                #GridSmColumns="ngModel"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">Divider Name</label>
+                            <div class="col-sm-12">
+                                <input 
+                                class="form-control"
+                                name="Divider"
+                                type="text"
+                                placeholder="Enter Divider"
+                                [(ngModel)]="paramChar1.Divider"
+                                #Divider="ngModel"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label">Options</label>
+                            <div class="col-sm-12">
+                                <input 
+                                class="form-control"
+                                name="Options"
+                                type="text"
+                                placeholder="Enter Options"
+                                [(ngModel)]="paramChar1.Options"
+                                #Options="ngModel"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-right">
+                    <button class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form> -->
+            </div>
+        </div>
