@@ -21,8 +21,12 @@
             <li class="active">
               <a data-toggle="pill" href="#qProduct">Product</a>
             </li>
-            <li><a data-toggle="pill" href="#qClient">Client</a></li>
-            <li><a data-toggle="pill" href="#qCondition">Conditions</a></li>
+            <li>
+              <a data-toggle="pill" href="#qClient">Client</a>
+            </li>
+            <li>
+              <a data-toggle="pill" href="#qCondition">Conditions</a>
+            </li>
           </ul>
           <div class="tab-content">
             <!-- Product tab -->
@@ -32,7 +36,9 @@
                 <li class="active">
                   <a data-toggle="tab" href="#qProduct__code">Code</a>
                 </li>
-                <li><a data-toggle="tab" href="#qProduct__form">Form</a></li>
+                <li>
+                  <a data-toggle="tab" href="#qProduct__form">Form</a>
+                </li>
                 <li class="hidden">
                   <a data-toggle="tab" href="#qProduct__submitedData"
                     >Submited Data</a
@@ -42,64 +48,69 @@
               <!-- Tab nav end -->
               <div class="tab-content">
                 <div id="qProduct__code" class="tab-pane fade in active">
-                  <form
+                  <!-- <form
                     role="form"
                     class="form-horizontal"
                     (ngSubmit)="
                       f.valid && f.dirty && submitQuotation(quotationParam)
                     "
                     #f="ngForm"
-                  >
-                    <div class="row">
-                      <div class="col-sm-6 col-lg-4">
-                        <div class="card-box">
-                          <div class="form-group row">
-                            <label class="col-sm-12 col-form-label"
-                              >Product code</label
-                            >
-                            <div class="col-sm-12">
-                              <input
-                                class="form-control"
-                                name="productCode"
-                                type="text"
-                                placeholder="Enter Divider"
-                                [(ngModel)]="quotationParam.productCode"
-                                #productCode="ngModel"
-                              />
-                            </div>
+                  > -->
+                  <div class="row">
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="card-box">
+                        <div class="form-group row">
+                          <label class="col-sm-12 col-form-label"
+                            >Product code</label
+                          >
+                          <div class="col-sm-12">
+                            <input
+                              class="form-control"
+                              name="code"
+                              type="text"
+                              placeholder="Enter Divider"
+                              [(ngModel)]="quotationParam.productCode"
+                            />
                           </div>
                         </div>
-                      </div>
-                      <div class="col-sm-6 col-lg-4">
-                        <div class="card-box">
-                          <div class="form-group row">
-                            <label class="col-sm-12 col-form-label"
-                              >Quantity</label
-                            >
-                            <div class="col-sm-12">
-                              <input
-                                class="form-control"
-                                name="quantidade"
-                                type="number"
-                                placeholder="Enter Divider"
-                                [(ngModel)]="quotationParam.quantidade"
-                                #quantidade="ngModel"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <button class="btn btn-primary mb-15">Submit</button>
                       </div>
                     </div>
-                  </form>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="card-box">
+                        <div class="form-group row">
+                          <label class="col-sm-12 col-form-label"
+                            >Quantity</label
+                          >
+                          <div class="col-sm-12">
+                            <input
+                              class="form-control"
+                              name="quantidade"
+                              type="number"
+                              placeholder="Enter Divider"
+                              [(ngModel)]="quotationParam.quantidade"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <button
+                        class="btn btn-primary mb-15"
+                        type="button"
+                        (click)="submitQuotation()"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                  <!-- </form> -->
                 </div>
                 <div id="qProduct__form" class="tab-pane fade">
                   <app-addproduct
                     [submitStatus]="submitStatusBol"
                     (messageToEmit)="getInputlistQuotation($event)"
-                  ></app-addproduct>
+                  >
+                  </app-addproduct>
                 </div>
                 <div id="qProduct__submitedData" class="tab-pane fade">
                   <div class="row">
@@ -177,24 +188,15 @@
             <!-- Client tab -->
             <div id="qClient" class="tab-pane fade">
               <!-- Tab nav -->
-              <ul class="nav nav-tabs nav-stacked">
-                <li class="hidden">
-                  <a data-toggle="tab" href="#qClient__submitedData"
-                    >Submited Data</a
-                  >
-                </li>
-              </ul>
+              <li class="hidden">
+                <a data-toggle="tab" href="#qClient__form">Client Form</a>
+                <a data-toggle="tab" href="#qClient__submitedData"
+                  >Submited Data</a
+                >
+              </li>
               <!-- Tab nav end -->
               <div class="tab-content">
-                <div id="qClient__code" class="tab-pane fade in active">
-                  <form
-                    role="form"
-                    class="form-horizontal"
-                    (ngSubmit)="
-                      f.valid && f.dirty && submitCustomer(quotationParam)
-                    "
-                    #f="ngForm"
-                  >
+                <div id="qClient__form" class="tab-pane fade in active">
                     <div class="row">
                       <div class="col-sm-6 col-lg-4">
                         <div class="card-box">
@@ -209,23 +211,15 @@
                                 type="text"
                                 placeholder="Enter Customer"
                                 [(ngModel)]="quotationParam.customer"
-                                #productCode="ngModel"
                               />
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="col-md-12">
-                        <button class="btn btn-primary mb-15">Submit</button>
+                        <button class="btn btn-primary mb-15" type="button" (click)="submitCustomer()">Submit</button>
                       </div>
                     </div>
-                  </form>
-                </div>
-                <div id="qClient__form" class="tab-pane fade">
-                  <app-addproduct
-                    [submitStatus]="submitStatusBol"
-                    (messageToEmit)="getInputlistQuotation($event)"
-                  ></app-addproduct>
                 </div>
                 <div id="qClient__submitedData" class="tab-pane fade">
                   <div class="row">
@@ -246,14 +240,9 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr
-                              *ngFor="let q of listCustomer; let i = index"
-                            >
-                              <td
-                                *ngFor="let h of keysQuotation; let d = index"
-                              >
-                                <ng-template>{{ q[i][h] }}</ng-template
-                                >
+                            <tr *ngFor="let q of listCustomer; let i = index">
+                              <td *ngFor="let h of keysCustomer; let d = index">
+                                {{ q[h] }}
                               </td>
                             </tr>
                           </tbody>

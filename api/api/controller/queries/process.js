@@ -1603,7 +1603,6 @@ var getCustomers = async (req, res) => {
     let finalResult = [];
     database.query(query).then(result => {
         async.forEach(result, function (element, callback) {
-            console.log('elememtn', element)
             let tempResult = {}
             tempResult['Customer'] = element.Customer.replace(/\s/g, '');
             tempResult['Address'] = element.Address.replace(/\s/g, '');
