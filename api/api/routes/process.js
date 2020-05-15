@@ -1,8 +1,10 @@
 var express = require('express'),
     router = express.Router();
 
-var { getQuotations, getProcessMeachne, processStatusUpdate, processSave, getProcessid, processUpdate,
-    addProcessrecord, getProcessRecord, getProcessRecordByid, updateProcessrecord, getCustomers } = require("../controller/queries/process");
+var { getQuotations, getProcessMeachne, processStatusUpdate,
+    processSave, getProcessid, processUpdate,
+    addProcessrecord, getProcessRecord, getProcessRecordByid,
+    updateProcessrecord, getCustomers } = require("../controller/queries/process");
 
 
 router.post('/api/updatePrcoessStatus', processStatusUpdate);
