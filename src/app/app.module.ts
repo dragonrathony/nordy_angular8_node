@@ -39,6 +39,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SafeHtml } from './pipes/safe.pipe';
 import { InnerComponentComponent } from './inner-component/inner-component.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,8 @@ import { InnerComponentComponent } from './inner-component/inner-component.compo
     HttpClientModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-
+    MatTabsModule,
+    BrowserAnimationsModule
   ],
   providers: [CommonServiceService],
   bootstrap: [AppComponent]

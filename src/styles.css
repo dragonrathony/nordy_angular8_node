@@ -14,6 +14,7 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }*/
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 .mb-10{
   margin-bottom: 10px;
 }

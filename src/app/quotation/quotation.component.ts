@@ -120,7 +120,10 @@ export class QuotationComponent implements OnInit {
 
           this.customer = this.quotationParam.customer;
 
-          $('a[href="#qClient__submitedData"]').trigger('click');
+          $('#qClient__form').removeClass('active');
+          $('#qClient__form').removeClass('in');
+          $('#qClient__submitedData').addClass('active');
+          $('#qClient__submitedData').addClass('in');
         }
         else {
           alert('no record found!!')
@@ -146,6 +149,9 @@ export class QuotationComponent implements OnInit {
    */
   backClientTab() {
     console.log('back to the client tab');
-    $('a[href="#qClient"]').trigger('click');
+    $('#qClient__form').addClass('active');
+    $('#qClient__form').addClass('in');
+    $('#qClient__submitedData').removeClass('active');
+    $('#qClient__submitedData').removeClass('in');
   }
 }
