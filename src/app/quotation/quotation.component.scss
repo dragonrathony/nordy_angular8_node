@@ -1,6 +1,5 @@
-
-.nav-pills{
-    & + .tab-content{
+.nav-pills {
+    &+.tab-content {
         background-color: rgba(51, 122, 183, 0.02);
         padding: 15px 0;
     }
@@ -9,13 +8,16 @@
 .nav-stacked {
     float: left;
     min-width: 210px;
-    & + .tab-content{
+
+    &+.tab-content {
         margin-left: 210px;
         padding: 0 15px;
     }
-    li{
+
+    li {
         border-bottom-color: transparent;
-        a{
+
+        a {
             border-bottom-color: transparent;
             border-right-width: 0px !important;
             border-left-width: 2px;
@@ -24,16 +26,18 @@
 
             // }
         }
-        &.active{
-            a{
+
+        &.active {
+            a {
                 background: #ecf0f5;
                 color: #353535;
                 border-top: 0;
-                border-color:  #ecf0f5;
+                border-color: #ecf0f5;
                 border-left-color: #3c8dbc;
                 margin: 0;
                 border-bottom-color: transparent;
-                &:hover{
+
+                &:hover {
                     background: #ecf0f5;
                     color: #353535;
                     border-top: 0;
@@ -44,13 +48,16 @@
         }
     }
 }
-#qProduct__submitedData{
+
+#qProduct__submitedData {
     transition: all 0.3s ease 0s;
 }
+
 #qProduct__submitedData.active.in {
     margin: 0;
     margin-left: -210px;
 }
+
 // #qProduct__form{
 //     .content-header{
 //         display: none;
@@ -64,43 +71,50 @@
 //         background-color: transparent;
 //     }
 // }
-tr{
-    .fa{
+tr {
+    .fa {
         cursor: pointer;
     }
-    .fa-minus{
+
+    .fa-minus {
         display: none;
     }
-    .quotationTableSubData{
-        ul{
+
+    .quotationTableSubData {
+        ul {
             padding: 0 7px;
             list-style-type: none;
-            margin:0;
+            margin: 0;
             height: 100%;
             transition: all 0.2s ease-in-out 0s;
             max-height: 0;
             overflow: hidden;
             background: #fff;
-            li{
+
+            li {
                 margin-bottom: 3px;
-                b{
+
+                b {
                     padding-right: 7px;
                 }
             }
         }
     }
-    &.active{
-        .quotationTableSubData{
-            ul{
+
+    &.active {
+        .quotationTableSubData {
+            ul {
                 padding: 15px 7px;
                 max-height: 451px;
                 overflow: initial;
             }
         }
-        .fa-minus{
+
+        .fa-minus {
             display: inline;
         }
-        .fa-plus{
+
+        .fa-plus {
             display: none;
         }
     }
@@ -108,9 +122,10 @@ tr{
 
 
 // Client tab
-#qClient__submitedData{
+#qClient__submitedData {
     transition: all 0.3s ease 0s;
 }
+
 #qClient__submitedData.active.in {
     margin: 0;
     // margin-left: -210px;
@@ -118,4 +133,8 @@ tr{
 
 #qClient__form {
     transition: all 0.3s ease 0s;
+}
+
+.quotation_button {
+    text-align: center;
 }

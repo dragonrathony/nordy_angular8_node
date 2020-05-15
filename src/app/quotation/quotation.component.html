@@ -197,29 +197,33 @@
               <!-- Tab nav end -->
               <div class="tab-content">
                 <div id="qClient__form" class="tab-pane fade in active">
-                    <div class="row">
-                      <div class="col-sm-6 col-lg-4">
-                        <div class="card-box">
-                          <div class="form-group row">
-                            <label class="col-sm-12 col-form-label"
-                              >Number</label
-                            >
-                            <div class="col-sm-12">
-                              <input
-                                class="form-control"
-                                name="customer"
-                                type="text"
-                                placeholder="Enter Customer"
-                                [(ngModel)]="quotationParam.customer"
-                              />
-                            </div>
+                  <div class="row">
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="card-box">
+                        <div class="form-group row">
+                          <label class="col-sm-12 col-form-label">Number</label>
+                          <div class="col-sm-12">
+                            <input
+                              class="form-control"
+                              name="customer"
+                              type="text"
+                              placeholder="Enter Customer"
+                              [(ngModel)]="quotationParam.customer"
+                            />
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-12">
-                        <button class="btn btn-primary mb-15" type="button" (click)="submitCustomer()">Submit</button>
-                      </div>
                     </div>
+                    <div class="col-md-12">
+                      <button
+                        class="btn btn-primary mb-15"
+                        type="button"
+                        (click)="submitCustomer()"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div id="qClient__submitedData" class="tab-pane fade">
                   <div class="row">
@@ -257,11 +261,46 @@
 
             <!-- Condition tab -->
             <div id="qCondition" class="tab-pane fade">
-              <h3>Conditions</h3>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam.
-              </p>
+              <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+                <input matInput type="number" placeholder="ICMS" />
+              </mat-form-field>
+
+              <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+                <input matInput type="number" placeholder="PIS" />
+              </mat-form-field>
+
+              <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+                <input matInput type="number" placeholder="COFINS" />
+              </mat-form-field>
+
+              <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+                <input matInput type="number" placeholder="Comission" />
+              </mat-form-field>
+
+              <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+                <input matInput type="number" placeholder="Shipment" />
+              </mat-form-field>
+
+              <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+                <input matInput type="number" placeholder="Margin" />
+              </mat-form-field>
+
+              <mat-form-field class="col-md-6 col-sm-6 col-xs-12">
+                <input matInput placeholder="Price / Kg" />
+              </mat-form-field>
+
+              <mat-form-field class="col-md-6 col-sm-6 col-xs-12">
+                <input matInput placeholder="Price / Order" />
+              </mat-form-field>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 quotation_button">
+                  <button mat-flat-button color="primary">See Invoice</button>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 quotation_button">
+                  <button mat-flat-button color="primary">Place Order</button>
+                </div>
+              </div>
             </div>
             <!-- Condition tab end -->
           </div>

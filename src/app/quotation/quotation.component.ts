@@ -44,7 +44,7 @@ export class QuotationComponent implements OnInit {
     }
     console.log("here submit quotation call")
     this.commonservice.searchQuotationByPCodeQty(this.quotationParam.productCode, this.quotationParam.quantidade)
-    .subscribe(dataList => {
+      .subscribe(dataList => {
         if (dataList['result']['result'].length) {
           this.keysQuotation = Object.keys(dataList['result']['result'][0]);
           this.listQuotation = dataList['result']['result'];
@@ -61,8 +61,8 @@ export class QuotationComponent implements OnInit {
           alert('no record found!!')
         }
       },
-      err => console.log(err)
-    );
+        err => console.log(err)
+      );
   }
 
 
@@ -143,7 +143,7 @@ export class QuotationComponent implements OnInit {
     $('a[href="#qProduct__code"]').trigger('click');
   }
 
-  
+
   /**
    * Back to client tab
    */
